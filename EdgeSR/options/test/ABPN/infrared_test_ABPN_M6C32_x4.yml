@@ -1,0 +1,44 @@
+name: ABPN_M6C32_x4
+suffix: ~
+model_type: SRModel
+scale: 4
+num_gpu: 1
+manual_seed: 0
+
+datasets:
+  test:
+    name: CS-TSR
+    type: PairedImageDataset
+    dataroot_gt: .\CS-TSR
+    dataroot_lq: ~
+    io_backend:
+      type: disk
+    use_aug: false
+
+network_g:
+  type: ABPN
+  num_feat: 32
+  num_block: 6
+  scale: 4
+
+save_img: true
+print_network: false
+
+path:
+  pretrain_network_g: ~
+  strict_load_g: true
+  param_key_g: params
+
+val:
+  save_img: true
+  suffix: ~
+
+  metrics:
+    psnr:
+      type: calculate_psnr
+      crop_border: 2
+      test_y_channel: true
+    ssim:
+      type: calculate_ssim
+      crop_border: 2
+      test_y_channel: true

@@ -1,0 +1,47 @@
+name: EdgeSR_M7C48_x2
+suffix: ~
+model_type: SRModel
+scale: 2
+num_gpu: 1
+manual_seed: 0
+
+datasets:
+  test:
+    name: CS-TSR
+    type: PairedImageDataset
+    dataroot_gt: .\CS-TSR
+    dataroot_lq: ~
+    io_backend:
+      type: disk
+    use_aug: false
+
+network_g:
+  type: EdgeSRForInference
+  num_in_ch: 1
+  num_out_ch: 1
+  upscale: 2
+  num_block: 7
+  num_feat: 48
+  num_residual_feat: 1
+
+save_img: false
+print_network: false
+
+path:
+  pretrain_network_g: ~
+  strict_load_g: true
+  param_key_g: params
+
+val:
+  save_img: false
+  suffix: ~
+
+  metrics:
+    psnr:
+      type: calculate_psnr
+      crop_border: 2
+      test_y_channel: true
+    ssim:
+      type: calculate_ssim
+      crop_border: 2
+      test_y_channel: true
