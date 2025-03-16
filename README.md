@@ -25,7 +25,9 @@
 
 Please install related libraries:
 
-```pip install -r requirements```
+```bash
+pip install -r requirements
+```
 
 ### Getting Started
 
@@ -37,7 +39,9 @@ To test on CS-TSR benchmarks, you need to download them from the following links
 
 + [CS-TSR](https://pan.baidu.com/pcloud/home), password: djp8
 
-```python test.py```
+```bash
+python test.py
+```
 
 The testing result will be saved in the ```result``` directory
 
