@@ -17,4 +17,34 @@
 
 ![This figure shows the workflow of EdgeSR.](https://github.com/2004kiki/EdgeSR/blob/main/EdgeSR/figure/overall.png)
 
-###Demo
+### Demo
+
+
+
+### Install
+
+Please install related libraries:
+
+```pip install -r requirements```
+
+### Getting Started
+
+#### Test
+
+The checkpoint is available [here](https://pan.baidu.com/pcloud/home), password: djp8.
+
+To test on CS-TSR benchmarks, you need to download them from the following links:
+
++ [CS-TSR](https://pan.baidu.com/pcloud/home), password: djp8
+
+```python test.py```
+
+The testing result will be saved in the ```result``` directory
+
+### Acknowledgement
+
+The code is based on [SRFormer](https://github.com/HVision-NKU/SRFormer) and [ETDS](https://github.com/ECNUSR/ETDS). We would like to express our sincere thanks to the contributors.
+
+### Contact
+
+If you have any questions, please contact Ziyu Lu at 2151805@tongji.edu.cn.
